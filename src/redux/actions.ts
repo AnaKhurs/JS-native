@@ -6,24 +6,64 @@ export enum ACTIONS_TYPE {
 
 
 export type ChangeCurrencyFieldType = {
+    type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE
+    payload: {
+        amountOfBYN: string,
+        amountOfCurrency: string,
+    }
+
 };
 
-// @ts-ignore
 export const ChangeCurrencyFieldAC = (amountOfBYN: string, amountOfCurrency: string): ChangeCurrencyFieldType => {
+    return {
+        type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE,
+        payload: {
+            amountOfBYN,
+            amountOfCurrency,
+        }
+    }
 };
 
 export type ChangeAction = {
+    type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION
+    //занулили инпут чтобы избежать ошибку конвертации при смене операции
+    payload: {
+        isBuying: boolean,
+        amountOfBYN: '',
+        amountOfCurrency: '',
+    }
 };
 
-// @ts-ignore
 export const ChangeActionAC = (isBuying: boolean): ChangeAction => {
+    return {
+        type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION,
+        payload: {
+            isBuying,
+            amountOfBYN: '',
+            amountOfCurrency: '',
+        }
+    }
 };
 
 export type ChangeCurrentCurrencyType = {
+    type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY
+    payload: {
+        currentCurrency: string,
+        amountOfBYN: '',
+        amountOfCurrency: '',
+    }
 };
 
-// @ts-ignore
+
 export const СhangeCurrentCurrencyAC = (currentCurrency: string): ChangeCurrentCurrencyType => {
+    return {
+        type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY,
+        payload: {
+            currentCurrency,
+            amountOfBYN: '',
+            amountOfCurrency: '',
+        }
+    }
 };
 
 export type CurrencyReducersTypes = ChangeCurrencyFieldType | ChangeAction | ChangeCurrentCurrencyType;
