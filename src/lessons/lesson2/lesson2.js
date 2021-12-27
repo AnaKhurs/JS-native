@@ -181,7 +181,6 @@ const printListRec = (l) => {
         printListRec(l.next)
     }
 }
-
 printListRec(list)
 
 const printLisWhile = (l) => {
@@ -192,6 +191,27 @@ const printLisWhile = (l) => {
 }
 printLisWhile(list)
 
+//Вывод односвязного списка в обратном порядке
+const printListReverseRec = (l) => {
+    if (l.next) {
+        printListReverseRec(l.next)
+    }
+    alert(l.value)
+}
+printListReverseRec(list)
+
+const printReverseListWhile = (l) => {
+    let arr = []
+    let tmp = l
+    while (tmp) {
+        arr.push(tmp.value)
+        tmp = tmp.next
+    }
+    for (let i = arr.length - 1; i >= 0; i--) {
+        alert(arr[i])
+    }
+}
+printReverseListWhile(list)
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
