@@ -120,11 +120,23 @@ const superSum = (num) => {
     return f
 }
 
-superSum(3)(2,5)(3,9)
+superSum(3)(2, 5)(3, 9)
 
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+//Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+//sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+
+const sumTo = (n) => {
+    if (n === 1) return n
+    if (n > 1) {
+        return n + sumTo(n - 1)
+    }
+}
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
