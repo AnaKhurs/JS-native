@@ -67,6 +67,27 @@ counter(); // 3
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
+const counter = (a) => {
+    let result = a
+    const obj = {
+        increase: function () {
+            return result += 1
+        },
+        decrease: function () {
+            return result -= 1
+        },
+        reset: function () {
+            return result = 0
+        },
+        set: function (b) {
+            return result = b
+        }
+    }
+    return obj
+}
+
+counter(5).increase()
+
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
