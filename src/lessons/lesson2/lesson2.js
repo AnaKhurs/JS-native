@@ -43,6 +43,22 @@ sum(3)(6)
 // counter2(); // 1
 // counter(); // 3
 
+const makeCounter = () => {
+    let result = 0
+    const f = () => {
+        result += 1
+        return result
+    }
+    return f
+}
+const counter = makeCounter();
+counter(); // 1
+counter(); // 2
+const counter2 = makeCounter();
+counter2(); // 1
+counter(); // 3
+
+
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
