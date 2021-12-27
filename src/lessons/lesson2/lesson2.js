@@ -160,6 +160,37 @@ const fibonacci = () => {
     return b
 }
 
+//Вывод односвязного списка
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+const printListRec = (l) => {
+    console.log(l.value)
+    if (l.next) {
+        printListRec(l.next)
+    }
+}
+
+printListRec(list)
+
+const printLisWhile = (l) => {
+    while (l) {
+        console.log(l.value)
+        l = l.next
+    }
+}
+printLisWhile(list)
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
