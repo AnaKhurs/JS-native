@@ -24,22 +24,14 @@ console.log('lesson 2');
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
-function sum(a) {
-
-    let currentSum = a;
-
-    function f(b) {
-        currentSum += b;
-        return f;
+const sum = (a) => {
+    let result = a
+    const f = (b) => {
+        result += b
+        return result
     }
-
-    f.toString = function() {
-        return currentSum;
-    };
-
-    return f;
+    return f
 }
-
 sum(3)(6)
 
 // Task 02
