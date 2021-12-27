@@ -97,8 +97,31 @@ counter(5).increase()
 // 4) superSum(3)(2,5,3) //10
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
-
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
+
+const superSum = (num) => {
+    if (num <= 0) return 0
+
+    if (num === 1) return (a) => a
+
+    let _arguments = []
+
+    const f = (...args) => {
+
+        _arguments = [..._arguments, ...args]
+
+        if (_arguments.length >= num) {
+            _arguments.length = num
+            return _arguments.reduce((acc, el) => acc + el)
+        } else {
+            return f
+        }
+    }
+    return f
+}
+
+superSum(3)(2,5)(3,9)
+
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
